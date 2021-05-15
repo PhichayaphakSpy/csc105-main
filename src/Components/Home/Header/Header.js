@@ -1,12 +1,12 @@
 import logo from './Logo.png';
-import { Nav}  from "./nav/Nav";
+import {Nav} from './nav/Nav';
 
-export const Header = ({products}) => {
+export const Header = ({products,onDelete}) => {
     
     return (
     <div className="header">
     <img src ={logo} alt = "logo" />
-    <Nav products = {products}/>
+    <Nav products = {products} onDelete={onDelete} />
     </div>
     );
 };

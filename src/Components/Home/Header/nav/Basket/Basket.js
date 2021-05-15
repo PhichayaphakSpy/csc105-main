@@ -2,9 +2,11 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import { Product } from '../../../Body/Product';
 
-export const Basket = ({products}) => {
+export const Basket = ({products,onDelete}) => {
   
   const Totalprice = products.reduce((a, c) => a +  c.price, 0);
+
+
 
     return (
       
@@ -19,11 +21,12 @@ export const Basket = ({products}) => {
         <div className="product-in-cart">
           <div className="shopping-cart-items">
             <div>{products.length === 0 && <div className="element3">Cart is empty</div>}</div>
-            {
+            { 
             products && products.map((el)=>{
-                return <Product prod = {el} />
+                return <Product prod = {el} onDelete={onDelete}/>
               })
-            }
+            } 
+            
             
           </div>
         </div>

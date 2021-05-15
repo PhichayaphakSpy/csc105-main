@@ -21,6 +21,7 @@ background-color:  rgb(255, 230, 230);
   display: flex ;
   align-items: center;
   z-index: 1;
+  width: 100%;
   
 }
 
@@ -253,7 +254,7 @@ transform: translateY(4px);
   }
 
 
-input[type=text], input[type=password], input[type=phone] {
+input[type=text], input[type=password], input[type=phone], input[type=email] {
   width: 100%;
   padding: 15px;
   margin: 15px 10px 17px 10px;
@@ -274,8 +275,8 @@ select {
 
  
 
-input[type=text]:focus, input[type=password]:focus, input[type=phone]:focus, select:focus {
-  background-color: #ddd;
+input[type=text]:focus, input[type=password]:focus, input[type=phone]:focus, input[type=email]:focus, select:focus {
+  background-color: rgb(255, 255, 255);
   outline: none;
 }
 
@@ -370,6 +371,7 @@ button[type="submit"]:hover {
 
 .shopping-cart {
   float: right;
+  display: block;
   background: white;
   width: 450px;
   position: relative;
@@ -408,10 +410,15 @@ button[type="submit"]:hover {
     .shopping-cart-items  .item-price {
       color: #6394F8;
       float: right;
+      margin-top: 7px;
     }
     
     .shopping-cart-items  .item-quantity {
       color: #ABB0BE;
+    }
+
+    .item-size{
+      margin-left: auto;
     }
   
   
@@ -619,4 +626,52 @@ button[type="submit"]:hover {
   width: 100%;
 }
   
+.popup-content {
+  display: block;
+}
 
+.buttonforitem {
+  float: right;
+  border-radius: 32px;
+  background-color: rgb(226, 70, 70);
+  color: rgb(255, 255, 255);
+  padding: 2px 10px;
+  border: none;
+  margin-top: 7px;
+}
+
+
+.Footer {
+  display: block;
+  height: 400px;
+  background-color: rgb(196, 170, 170);
+}
+
+.column {
+  padding: 50px 0px 50px 30px;
+  width: 100%;  
+}
+
+.stcol {
+  width: 45%;
+}
+
+.ndcol {
+  width: 25%;
+}
+
+.rdcol {
+  width: 30%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}

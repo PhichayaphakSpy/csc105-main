@@ -1,12 +1,15 @@
 import React from "react";
-import Popup from "reactjs-popup";
 import { Basket } from "./Basket";
 import { Basket3Fill } from 'react-bootstrap-icons';
+import { Button, Popup } from 'semantic-ui-react';
 
-export const BasketPopUp  = ({products}) => {
-  return (
+export const BasketPopUp  = ({products,onDelete}) => { 
   
-  <Popup trigger={<button className="buttonss"><Basket3Fill/> </button>} position="bottom right">
-        <div><Basket products = {products}/></div>
-  </Popup>);
+  
+  return (<>
+ 
+  <Popup style={{zIndex:999}} on='click'
+    positionFixed pinned trigger={<Button className="buttonss"><Basket3Fill/> </Button>} position="bottom right" >
+        <div><Basket products = {products} onDelete={onDelete}/></div>
+  </Popup></>);
 };

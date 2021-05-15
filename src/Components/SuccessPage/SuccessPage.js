@@ -1,7 +1,24 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
+import axios from "../../axios"
 
 
 export const SuccessPage = () => {
+
+  const [payment, setPayment] = useState("");
+
+  useEffect(() => {
+    axios.get("/SuccessServlet").then((res)=> {
+      setPayment(res.data.id);
+    })
+    
+  }, []);
+ 
+  
+  
+
+    
+ 
+
     return (
       <div className="successpage">
         <div className="space"></div>
@@ -15,6 +32,7 @@ export const SuccessPage = () => {
         </div>
         <h1>Your purshed is succesful</h1>
         <p>Thank you for shopping with us</p>
+        <p> Your order number is {payment}. </p>
       </div>
       
     )

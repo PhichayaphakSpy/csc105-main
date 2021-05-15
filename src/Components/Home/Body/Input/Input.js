@@ -4,15 +4,18 @@ import { Button, ButtonGroup } from 'reactstrap';
 
 
 export const Input = ({onAdd}) => {
-    const [flavor, setflavor] = useState("");
-    const [additonal, setadditonal] = useState("");
-    const [size, setsize] = useState("");
+    const [flavor, setflavor] = useState(null);
+    const [additonal, setadditonal] = useState(null);
+    const [size, setsize] = useState(null);
 
     const onClickHandler = () => {
-        onAdd(flavor,additonal,size);
-        setflavor("");
-        setadditonal("");
-        setsize("");
+        if(flavor!=null||additonal!=null||size!=null){
+            onAdd(flavor,additonal,size);
+                setflavor(null);
+                setadditonal(null);
+                setsize(null);
+        }
+        
     }
 
     
@@ -53,8 +56,10 @@ export const Input = ({onAdd}) => {
         </div>
 
         <div className="element3">
-            <button className="AddToCartButton" onClick={onClickHandler}>Add to cart!</button>
+            <button className="AddToCartButton" onClick={onClickHandler} >Add to cart!</button>
         </div>
-        </div>
+
+    
+    </div>
     )
 }
