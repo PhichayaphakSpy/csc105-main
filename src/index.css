@@ -643,7 +643,7 @@ button[type="submit"]:hover {
 
 .Footer {
   display: block;
-  height: 400px;
+  height: 100%;
   background-color: rgb(196, 170, 170);
 }
 

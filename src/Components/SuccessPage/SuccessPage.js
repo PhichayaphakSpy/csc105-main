@@ -33,6 +33,7 @@ export const SuccessPage = () => {
         <h1>Your purshed is succesful</h1>
         <p>Thank you for shopping with us</p>
         <p> Your order number is {payment}. </p>
+        <p> Please check your email for the recipt.</p>
       </div>
       
     )

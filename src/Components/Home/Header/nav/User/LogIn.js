@@ -2,10 +2,11 @@ import React,{useState} from 'react'
 import { Link } from "react-router-dom";
 import axios from "../../../../../axios"
 import FormData from "form-data"
+import { Alert } from 'reactstrap';
 
 export const LogIn = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState(null);
+  const [password, setPassword] = useState(null);
 
   const submitLogIn = (event) => {
     event.preventDefault();
@@ -17,7 +18,7 @@ export const LogIn = () => {
     axios.post("/SignIn", formData)
         .then((res)=>{
       window.location.href = "/";
-    }).catch((error)=>alert(error.response.data.message));
+    }).catch((error)=>alert(error.response.data.error));
   };
 
     return (

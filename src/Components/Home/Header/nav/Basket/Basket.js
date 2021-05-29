@@ -29,8 +29,11 @@ export const Basket = ({products,onDelete}) => {
             
             
           </div>
-        </div>
-        <Link to="/CheckOut"><button type="submit" class="btn btn-primary btn-ghost">Check Out</button></Link>
+        </div>{
+          products.length !== 0 &&
+          <Link to="/CheckOut"><button type="submit" class="btn btn-primary btn-ghost">Check Out</button></Link>
+        }
+        
       </div>  
         
       

@@ -26,9 +26,7 @@ const SummaryOrder = ({products}) => {
 
 useEffect(() => {
   fetchUser();
-  
 }, []);
-
 
 const fetchUser = async () => {
   const tempUser = await axios.get("/UserServlet");

@@ -23,7 +23,7 @@ export const Form = () => {
    
     const validEmail = new RegExp(
       '^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$'
-       );
+       ); 
       if( tel.length != 10|| password.length<6 || !validEmail.test(email) )
       { return alert("invalid format of password, telephone number or email"); }
 
@@ -42,7 +42,7 @@ export const Form = () => {
       axios.post("/SignIn", formData)
         .then((res)=>{
       window.location.href = "/";
-    }).catch((error)=>alert(error.response.data.message));
+      }).catch((error)=>alert(error.response.data.message));
     }).catch((error)=>alert(error.response.data.message));
   };
 
